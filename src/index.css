@@ -83,6 +83,11 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  body::-webkit-scrollbar {
+    display: none;
   }
   html {
     scroll-behavior: smooth;
@@ -91,20 +96,20 @@
 
 @layer components {
   .glass-card {
-    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl shadow-lg;
+    @apply bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 backdrop-blur-xl border border-purple-400/30 rounded-xl shadow-lg hover:border-pink-400/50 transition-all;
   }
   .glow-text {
     @apply text-primary;
-    text-shadow: 0 0 20px hsl(var(--glow) / 0.4);
+    text-shadow: 0 0 20px hsl(var(--glow) / 0.6), 0 0 40px rgba(255, 0, 110, 0.4);
   }
   .glow-border {
-    box-shadow: 0 0 15px hsl(var(--glow) / 0.15), inset 0 0 15px hsl(var(--glow) / 0.05);
+    box-shadow: 0 0 20px hsl(var(--glow) / 0.25), inset 0 0 20px hsl(var(--glow) / 0.1);
   }
   .section-container {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
   }
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary/60;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400;
   }
   .nav-link {
     @apply text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium tracking-wide uppercase;
@@ -114,5 +119,47 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+
+
+
+
+@layer base {
+  body {
+    position: relative;
+    overflow: auto;
+    perspective: 1000px;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: 
+      linear-gradient(135deg, #667eea 0%, #764ba2 15%, #f093fb 30%, #4facfe 50%, #00f2fe 70%, #06ffa5 85%, #ffbe0b 100%);
+    filter: blur(1.5px);
+    transform-origin: center;
+    opacity: 0.25;
+    transform-style: preserve-3d;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: 
+      radial-gradient(rgba(255, 0, 110, 0.25) 2px, transparent 2px),
+      radial-gradient(rgba(58, 134, 255, 0.2) 2px, transparent 2px),
+      radial-gradient(rgba(100, 200, 150, 0.2) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px, 80px 80px;
+    background-position: 0 0, 50px 50px, 25px 25px;
+    background-blend-mode: overlay, overlay, normal;
+    opacity: 0.15;
+    transform-style: preserve-3d;
   }
 }

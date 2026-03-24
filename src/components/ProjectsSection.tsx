@@ -1,44 +1,82 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, Github, Bot, Calculator, Cloud, BarChart3 } from "lucide-react";
+import { ExternalLink, Github, Bot, Calculator, Cloud, BarChart3, Zap, Database } from "lucide-react";
+import SectionParticles from "./SectionParticles";
 
 const projects = [
   {
-    title: "Travel Safety Advisor Chatbot",
-    desc: "AI-powered chatbot providing real-time travel safety insights using OpenAI and weather data to help travelers make informed decisions.",
-    tech: ["Python", "Flask", "OpenAI API", "Weather API"],
-    category: "AI",
-    icon: Bot,
-    github: "https://github.com",
-    live: "#",
-  },
-  {
-    title: "Travel Budget Calculator",
-    desc: "Smart chatbot that helps travelers plan and manage their trip budgets with intelligent cost estimation and recommendations.",
-    tech: ["Python", "Flask", "NLP"],
-    category: "AI",
-    icon: Calculator,
-    github: "https://github.com",
-    live: "#",
-  },
-  {
-    title: "Weather Prediction Website",
-    desc: "Full-stack weather forecasting application with beautiful visualizations and accurate predictions using meteorological data.",
-    tech: ["HTML", "CSS", "JavaScript", "API"],
+    title: "wanderLust",
+    desc: "A travel planning app with destination discovery, itinerary creation, and booking assistance.",
+    tech: ["React.js", "Node.js", "Express", "MongoDB"],
     category: "Web",
     icon: Cloud,
-    github: "https://github.com",
+    github: "https://github.com/abhishekp-786/wanderLust",
     live: "#",
   },
   {
-    title: "Hospital Data Analysis Dashboard",
-    desc: "Comprehensive analytics dashboard analyzing hospital data to derive insights about patient demographics, treatments, and outcomes.",
-    tech: ["Excel", "Data Analysis", "Visualization"],
+    title: "student-travel-planner aibot",
+    desc: "AI chatbot that helps students plan travel itineraries, budget their trip, and find student-friendly accommodations.",
+    tech: ["Python", "Flask", "OpenAI API"],
+    category: "AI",
+    icon: Bot,
+    github: "https://github.com/abhishekp-786/Students-Travel-Planner-AiBot",
+    live: "#",
+  },
+  {
+    title: "Multi-Agent-Joke-Generator",
+    desc: "Multi-agent AI system that generates and selects the best programming jokes using HuggingFace LLMs.",
+    tech: ["Python", "HuggingFace", "LLMs", "Multi-Agent"],
+    category: "AI",
+    icon: Zap,
+    github: "https://github.com/abhishekp-786/Multi-Agent-Joke-Generator",
+    live: "#",
+  },
+  {
+    title: "Heart Disease Prediction",
+    desc: "Machine learning model to predict heart disease risk from patient data and health indicators.",
+    tech: ["Python", "scikit-learn", "Pandas", "NumPy"],
+    category: "AI",
+    icon: Calculator,
+    github: "https://github.com/abhishekp-786/Heart-Disease-Prediction-Model",
+    live: "#",
+  },
+  {
+    title: "Live Face Detection System",
+    desc: "Real-time face detection system with webcam input and detection overlay using computer vision.",
+    tech: ["Python", "OpenCV", "Machine Learning"],
+    category: "AI",
+    icon: Bot,
+    github: "https://github.com/abhishekp-786/Live-Face-Detection-System",
+    live: "#",
+  },
+  {
+    title: "Hospital Emergency Room Analysis Dashboard",
+    desc: "Interactive dashboard for emergency room metrics, patient flow analysis, and treatment outcomes.",
+    tech: ["Power BI", "Data Analysis", "Excel"],
     category: "Data",
     icon: BarChart3,
-    github: "https://github.com",
-    live: null,
+    github: "https://github.com/abhishekp-786/Hospital-Emergency-Room-Analysis-Dashboard",
+    live: "#",
   },
+  {
+    title: "Bean Class Prediction",
+    desc: "Predicts bean disease class from leaf features using machine learning algorithms.",
+    tech: ["Python", "scikit-learn", "Pandas", "NumPy"],
+    category: "AI",
+    icon: Calculator,
+    github: "https://github.com/abhishekp-786/Beans-Class-Prediction",
+    live: "#",
+  },
+  {
+    title: "EDA Python - Mobile Data Sales Analysis",
+    desc: "Comprehensive exploratory data analysis project analyzing mobile data sales trends to help companies increase revenue.",
+    tech: ["Python", "Pandas", "Matplotlib", "Data Analysis"],
+    category: "Data",
+    icon: BarChart3,
+    github: "https://github.com/abhishekp-786/EDA_Python",
+    live: "#",
+  },
+
 ];
 
 const filters = ["All", "AI", "Web", "Data"];
@@ -52,7 +90,8 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="relative">
-      <div className="section-container" ref={ref}>
+      <SectionParticles count={15} />
+      <div className="section-container relative z-10" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

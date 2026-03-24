@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 
 const roles = [
+  "Aspiring Data Engineer",
+  "Aspiring Data Scientist",
+  "AI/ML Enthusiast",
   "Aspiring Software Developer",
-  "Data Science Enthusiast",
   "Problem Solver",
-  "Web Developer",
+  "Data Analyst",
 ];
 
 const HeroSection = () => {
@@ -61,39 +63,55 @@ const HeroSection = () => {
             <span className="font-mono text-lg sm:text-xl text-muted-foreground">
               {text}
             </span>
-            <span className="ml-1 w-0.5 h-6 bg-primary animate-blink inline-block" />
+            <span className="ml-1 w-0.5 h-6 bg-gradient-to-b from-pink-400 to-purple-400 animate-blink inline-block" />
           </div>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-10 text-base sm:text-lg leading-relaxed">
-            BTech Computer Science student passionate about building elegant solutions
-            through code. Specializing in Data Science & full-stack development.
+          <p className="text-lg sm:text-2xl mb-8 text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text font-semibold">
+            Data Science  |  AI/ML  |  Full Stack Development
+          </p>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-10 text-base sm:text-lg leading-relaxed">
+            BTech Computer Science student specializing in Data Science. 
+            Passionate about building data-driven applications, solving complex problems
+            and staying at the intersection of AI/ML and web development.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
               href="#projects"
-              className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
+              className="px-8 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 text-white font-medium hover:shadow-lg hover:shadow-pink-500/50 transition-all transform hover:scale-105"
             >
               View Projects
             </a>
             <a
+              href="/resume.pdf"
+              download="Abhishek_Kumar_Prajapati_Resume.pdf"
+              className="px-8 py-3 rounded-lg border-2 border-cyan-400 text-cyan-400 font-medium hover:bg-cyan-400/10 transition-all transform hover:scale-105 flex items-center gap-2"
+            >
+              <Download size={16} />
+              Download Resume
+            </a>
+            <a
               href="#contact"
-              className="px-8 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors"
+              className="px-8 py-3 rounded-lg border-2 border-purple-400 text-purple-400 font-medium hover:bg-purple-400/10 transition-all transform hover:scale-105"
             >
               Contact Me
             </a>
           </div>
 
           <div className="flex items-center justify-center gap-5">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/abhishekp-786" target="_blank" rel="noopener noreferrer"
               className="p-3 rounded-full bg-secondary hover:bg-primary/10 hover:text-primary transition-colors text-muted-foreground">
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/abhishek-kumar-prajapati-10979724b/" target="_blank" rel="noopener noreferrer"
               className="p-3 rounded-full bg-secondary hover:bg-primary/10 hover:text-primary transition-colors text-muted-foreground">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:abhishek@example.com"
-              className="p-3 rounded-full bg-secondary hover:bg-primary/10 hover:text-primary transition-colors text-muted-foreground">
+            <a 
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=prajapatiabhishekkumar15@gmail.com&su=Let's%20Connect&body=Hi%20Abhishek,%20I%20visited%20your%20portfolio."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-secondary hover:bg-primary/10 hover:text-primary transition-colors text-muted-foreground"
+            >
               <Mail size={20} />
             </a>
           </div>

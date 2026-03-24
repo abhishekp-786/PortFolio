@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
+  { label: "Resume", href: "#resume" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
@@ -33,9 +34,9 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <a href="#" className="font-mono font-bold text-lg tracking-tight">
-          <span className="glow-text">&lt;</span>
-          <span className="text-foreground">AKP</span>
-          <span className="glow-text"> /&gt;</span>
+          <span className="glow-text">&#9734;</span>
+          <span className="text-foreground"> AKP</span>
+          <span className="glow-text"> &#9734;</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
