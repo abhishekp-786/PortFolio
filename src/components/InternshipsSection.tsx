@@ -8,8 +8,8 @@ import SectionParticles from "./SectionParticles";
 const internships = [
   {
     title: "AI/ML Internship",
-    company: "Tech Analytics Pvt Ltd",
-    duration: "Jun 2024 - Aug 2024",
+    company: "AICTE - Adenet Foundation in collaboration with IBM SkillsBuild",
+    duration: "10 Dec 2025 - 11 Jan 2026",
     location: "Remote",
     description:
       "Implemented ETL pipelines, optimized SQL queries, and built dashboard data ingestion workflows.",
